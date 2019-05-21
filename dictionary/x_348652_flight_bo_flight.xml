@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Flight" max_length="40" name="x_348652_flight_bo_flight" type="collection">
+        <element label="Airline" max_length="32" name="airline" reference="x_348652_flight_bo_airline" type="reference"/>
+        <element label="Arrival date" max_length="40" name="arrival_date" type="glide_date_time"/>
+        <element label="Departure date" max_length="40" name="departure_date" type="glide_date_time"/>
+        <element label="Destination" max_length="40" name="destination" type="string"/>
+        <element label="Duration" max_length="40" name="duration" type="glide_time"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="One-way?" max_length="40" name="one_way" type="boolean"/>
+        <element label="Passengers" max_length="40" name="passengers" type="integer"/>
+        <element label="Plane class" max_length="32" name="plane_class" reference="x_348652_flight_bo_airplane" type="reference"/>
+        <element label="Starting airport" max_length="32" name="starting_airport" reference="x_348652_flight_bo_airport" type="reference"/>
+        <index name="index">
+            <element name="starting_airport"/>
+        </index>
+        <index name="index2">
+            <element name="plane_class"/>
+        </index>
+        <index name="index3">
+            <element name="airline"/>
+        </index>
+    </element>
+</database>
