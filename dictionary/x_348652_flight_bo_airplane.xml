@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element label="Airplane" max_length="40" name="x_348652_flight_bo_airplane" type="collection">
+        <element label="Capacity" max_length="40" name="capacity" type="integer"/>
         <element display="true" label="Class" max_length="40" name="class" type="string"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element label="Owner" max_length="40" name="owner" reference="x_348652_flight_bo_airline" type="reference"/>

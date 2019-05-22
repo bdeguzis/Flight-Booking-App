@@ -7,7 +7,7 @@
         <action_query>false</action_query>
         <action_update>true</action_update>
         <active>true</active>
-        <add_message>true</add_message>
+        <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
@@ -18,7 +18,7 @@
         <filter_condition/>
         <is_rest>false</is_rest>
         <message><![CDATA[<p>Duration</p>]]></message>
-        <name>Calculated Flight Duration</name>
+        <name>Calculate Flight Duration</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -37,15 +37,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>80ea7c0edb613300e7a111203996192d</sys_id>
-        <sys_mod_count>41</sys_mod_count>
-        <sys_name>Calculated Flight Duration</sys_name>
+        <sys_mod_count>42</sys_mod_count>
+        <sys_name>Calculate Flight Duration</sys_name>
         <sys_overrides/>
         <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
         <sys_update_name>sys_script_80ea7c0edb613300e7a111203996192d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-05-22 15:21:03</sys_updated_on>
+        <sys_updated_on>2019-05-22 15:29:13</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
