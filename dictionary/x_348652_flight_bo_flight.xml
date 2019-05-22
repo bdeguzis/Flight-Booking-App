@@ -3,11 +3,12 @@
         <element label="Airline" max_length="32" name="airline" reference="x_348652_flight_bo_airline" type="reference"/>
         <element label="Arrival date" max_length="40" name="arrival_date" type="glide_date_time"/>
         <element label="Departure date" max_length="40" name="departure_date" type="glide_date_time"/>
-        <element label="Destination" max_length="40" name="destination" type="string"/>
-        <element label="Duration" max_length="40" name="duration" type="glide_time"/>
+        <element label="Destination" max_length="40" name="destination" reference="x_348652_flight_bo_airport" type="reference"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;var departureDate = current.departure_date;&#13;&#10;&#9;var arrivalDate = current.arrival_date;&#13;&#10;&#9;var flightDuration = GlideDateTime.subtract(departureDate, arrivalDate);&#13;&#10;&#9;&#13;&#10;&#9;return flightDuration;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Duration" max_length="40" name="duration" read_only="true" type="glide_duration"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element label="One-way?" max_length="40" name="one_way" type="boolean"/>
-        <element label="Passengers" max_length="40" name="passengers" type="integer"/>
+        <element label="Passenger count" max_length="40" name="passengers" type="integer"/>
+        <element label="Passenger list" max_length="32" name="passenger_list" reference="x_348652_flight_bo_m2m_flights_users" type="reference"/>
         <element label="Plane class" max_length="32" name="plane_class" reference="x_348652_flight_bo_airplane" type="reference"/>
         <element label="Starting airport" max_length="32" name="starting_airport" reference="x_348652_flight_bo_airport" type="reference"/>
         <index name="index">
@@ -18,6 +19,9 @@
         </index>
         <index name="index3">
             <element name="airline"/>
+        </index>
+        <index name="index4">
+            <element name="passenger_list"/>
         </index>
     </element>
 </database>
