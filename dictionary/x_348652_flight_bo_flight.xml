@@ -8,7 +8,6 @@
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element label="One-way?" max_length="40" name="one_way" type="boolean"/>
         <element default="0" label="Passenger count" max_length="40" name="passengers" read_only="true" type="integer"/>
-        <element label="Passenger list" max_length="32" name="passenger_list" reference="x_348652_flight_bo_m2m_flights_users" type="reference"/>
         <element label="Plane class" max_length="32" name="plane_class" reference="x_348652_flight_bo_airplane" type="reference"/>
         <element label="Starting airport" max_length="32" name="starting_airport" reference="x_348652_flight_bo_airport" type="reference"/>
         <index name="index">
@@ -19,9 +18,6 @@
         </index>
         <index name="index3">
             <element name="airline"/>
-        </index>
-        <index name="index4">
-            <element name="passenger_list"/>
         </index>
     </element>
 </database>

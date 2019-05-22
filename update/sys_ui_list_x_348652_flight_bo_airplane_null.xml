@@ -3,47 +3,62 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>number</element>
-            <list_id display_value="x_348652_flight_bo_airplane" element="NULL" name="x_348652_flight_bo_airplane" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">124937e9db213300e7a1112039961941</list_id>
+            <list_id display_value="x_348652_flight_bo_airplane" element="NULL" name="x_348652_flight_bo_airplane" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">f4273d46db253300e7a1112039961987</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:21:31</sys_created_on>
-            <sys_id>5a4937e9db213300e7a1112039961941</sys_id>
+            <sys_created_on>2019-05-22 18:09:52</sys_created_on>
+            <sys_id>b0273d46db253300e7a1112039961988</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:21:31</sys_updated_on>
+            <sys_updated_on>2019-05-22 18:09:52</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>owner</element>
-            <list_id display_value="x_348652_flight_bo_airplane" element="NULL" name="x_348652_flight_bo_airplane" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">124937e9db213300e7a1112039961941</list_id>
+            <list_id display_value="x_348652_flight_bo_airplane" element="NULL" name="x_348652_flight_bo_airplane" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">f4273d46db253300e7a1112039961987</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:21:31</sys_created_on>
-            <sys_id>da4937e9db213300e7a1112039961941</sys_id>
+            <sys_created_on>2019-05-22 18:09:52</sys_created_on>
+            <sys_id>38273d46db253300e7a1112039961988</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:21:31</sys_updated_on>
+            <sys_updated_on>2019-05-22 18:09:52</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>class</element>
-            <list_id display_value="x_348652_flight_bo_airplane" element="NULL" name="x_348652_flight_bo_airplane" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">124937e9db213300e7a1112039961941</list_id>
+            <list_id display_value="x_348652_flight_bo_airplane" element="NULL" name="x_348652_flight_bo_airplane" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">f4273d46db253300e7a1112039961987</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:21:31</sys_created_on>
-            <sys_id>5e4937e9db213300e7a1112039961941</sys_id>
+            <sys_created_on>2019-05-22 18:09:52</sys_created_on>
+            <sys_id>b8273d46db253300e7a1112039961988</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:21:31</sys_updated_on>
+            <sys_updated_on>2019-05-22 18:09:52</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>capacity</element>
+            <list_id display_value="x_348652_flight_bo_airplane" element="NULL" name="x_348652_flight_bo_airplane" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">f4273d46db253300e7a1112039961987</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-05-22 18:09:52</sys_created_on>
+            <sys_id>3c273d46db253300e7a1112039961988</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-05-22 18:09:52</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -57,10 +72,10 @@
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:21:31</sys_created_on>
+            <sys_created_on>2019-05-22 18:09:52</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>124937e9db213300e7a1112039961941</sys_id>
+            <sys_id>f4273d46db253300e7a1112039961987</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_348652_flight_bo_airplane</sys_name>
             <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
@@ -68,7 +83,7 @@
             <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
             <sys_update_name>sys_ui_list_x_348652_flight_bo_airplane_null</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:21:31</sys_updated_on>
+            <sys_updated_on>2019-05-22 18:09:52</sys_updated_on>
             <sys_user/>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>
