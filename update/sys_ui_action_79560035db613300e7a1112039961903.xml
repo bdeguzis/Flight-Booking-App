@@ -5,7 +5,7 @@
         <client>false</client>
         <client_script_v2/>
         <comments/>
-        <condition/>
+        <condition>var ans = true;var res = new GlideRecord('x_348652_flight_bo_m2m_flights_users'); res.addQuery('user', '=', gs.getUserID()); res.query(); while (res.next()) {if (res.getValue('flight') != current.getValue('sys_id')){ans=true;}else{ans=false; break;}}ans;</condition>
         <form_action>true</form_action>
         <form_button>true</form_button>
         <form_button_v2>false</form_button_v2>
@@ -39,7 +39,6 @@
 	//Increment the total passengers on this flight by 1
 	current.passengers += 1;
 	current.update();
-	action.setRedirectURL(current);
 ]]></script>
         <show_insert>true</show_insert>
         <show_multiple_update>false</show_multiple_update>
@@ -51,7 +50,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>79560035db613300e7a1112039961903</sys_id>
-        <sys_mod_count>92</sys_mod_count>
+        <sys_mod_count>109</sys_mod_count>
         <sys_name>Book Flight</sys_name>
         <sys_overrides/>
         <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
@@ -59,7 +58,7 @@
         <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
         <sys_update_name>sys_ui_action_79560035db613300e7a1112039961903</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-05-23 12:49:47</sys_updated_on>
+        <sys_updated_on>2019-05-23 18:43:39</sys_updated_on>
         <table>x_348652_flight_bo_flight</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>true</ui16_compatible>

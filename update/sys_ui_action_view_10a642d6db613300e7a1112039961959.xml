@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_action_view">
+    <sys_ui_action_view action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_ui_action_view</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-23 13:56:01</sys_created_on>
+        <sys_id>10a642d6db613300e7a1112039961959</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Book Flight.Flight Booked</sys_name>
+        <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
+        <sys_ui_action display_value="Book Flight">79560035db613300e7a1112039961903</sys_ui_action>
+        <sys_ui_view display_value="Flight Booked" name="Flight_Booked">2ed5c696db613300e7a111203996192c</sys_ui_view>
+        <sys_update_name>sys_ui_action_view_10a642d6db613300e7a1112039961959</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-23 13:56:13</sys_updated_on>
+        <visibility>exclude</visibility>
+    </sys_ui_action_view>
+</record_update>
