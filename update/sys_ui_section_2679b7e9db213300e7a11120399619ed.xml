@@ -4,13 +4,13 @@
             <element>number</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:24:22</sys_created_on>
-            <sys_id>c0f93fe9db213300e7a11120399619e5</sys_id>
+            <sys_created_on>2019-05-23 11:49:48</sys_created_on>
+            <sys_id>a3b9a116db213300e7a1112039961919</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:24:22</sys_updated_on>
+            <sys_updated_on>2019-05-23 11:49:48</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,153 +18,125 @@
             <element>airline</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:24:22</sys_created_on>
-            <sys_id>44f93fe9db213300e7a11120399619e5</sys_id>
+            <sys_created_on>2019-05-23 11:49:48</sys_created_on>
+            <sys_id>6bb9a116db213300e7a1112039961919</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:24:22</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>starting_airport</element>
-            <position>2</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:24:22</sys_created_on>
-            <sys_id>c4f93fe9db213300e7a11120399619e5</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:24:22</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>destination</element>
-            <position>3</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:24:22</sys_created_on>
-            <sys_id>48f93fe9db213300e7a11120399619e5</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:24:22</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>one_way</element>
-            <position>4</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:24:22</sys_created_on>
-            <sys_id>c8f93fe9db213300e7a11120399619e5</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:24:22</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>departure_date</element>
-            <position>5</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:24:22</sys_created_on>
-            <sys_id>4cf93fe9db213300e7a11120399619e5</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:24:22</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>arrival_date</element>
-            <position>6</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:24:22</sys_created_on>
-            <sys_id>ccf93fe9db213300e7a11120399619e5</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:24:22</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>duration</element>
-            <position>7</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:24:22</sys_created_on>
-            <sys_id>40f93fe9db213300e7a11120399619e6</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:24:22</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.split</element>
-            <position>8</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:24:22</sys_created_on>
-            <sys_id>c0f93fe9db213300e7a11120399619e6</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:24:22</sys_updated_on>
-            <sys_user/>
-            <type>.split</type>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>passengers</element>
-            <position>9</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:24:22</sys_created_on>
-            <sys_id>44f93fe9db213300e7a11120399619e6</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:24:22</sys_updated_on>
+            <sys_updated_on>2019-05-23 11:49:48</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>plane_class</element>
-            <position>10</position>
+            <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:24:22</sys_created_on>
-            <sys_id>c4f93fe9db213300e7a11120399619e6</sys_id>
+            <sys_created_on>2019-05-23 11:49:48</sys_created_on>
+            <sys_id>ebb9a116db213300e7a1112039961919</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:24:22</sys_updated_on>
+            <sys_updated_on>2019-05-23 11:49:48</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>passenger_list</element>
-            <position>11</position>
+            <element>starting_airport</element>
+            <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-05-21 14:54:38</sys_created_on>
-            <sys_id>5bd04431db613300e7a111203996194b</sys_id>
+            <sys_created_on>2019-05-23 11:49:48</sys_created_on>
+            <sys_id>6fb9a116db213300e7a1112039961919</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-05-21 14:54:38</sys_updated_on>
+            <sys_updated_on>2019-05-23 11:49:48</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>destination</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-05-23 11:49:48</sys_created_on>
+            <sys_id>efb9a116db213300e7a1112039961919</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-05-23 11:49:48</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>one_way</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-05-23 11:49:48</sys_created_on>
+            <sys_id>63b9a116db213300e7a111203996191a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-05-23 11:49:48</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>departure_date</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-05-23 11:49:48</sys_created_on>
+            <sys_id>e3b9a116db213300e7a111203996191a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-05-23 11:49:48</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>arrival_date</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-05-23 11:49:48</sys_created_on>
+            <sys_id>67b9a116db213300e7a111203996191a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-05-23 11:49:48</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>duration</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-05-23 11:49:48</sys_created_on>
+            <sys_id>e7b9a116db213300e7a111203996191a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-05-23 11:49:48</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>passengers</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-05-23 11:49:48</sys_created_on>
+            <sys_id>6bb9a116db213300e7a111203996191a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_348652_flight_bo_flight" sys_domain="global" view="Default view">2679b7e9db213300e7a11120399619ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-05-23 11:49:48</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

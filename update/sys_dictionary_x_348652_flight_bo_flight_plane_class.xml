@@ -20,8 +20,8 @@
         <default_value/>
         <defaultsort/>
         <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
+        <dependent>airline</dependent>
+        <dependent_on_field>airline</dependent_on_field>
         <display>false</display>
         <dynamic_creation>false</dynamic_creation>
         <dynamic_creation_script/>
@@ -54,18 +54,18 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-05-21 14:01:52</sys_created_on>
         <sys_id>b6347f65db213300e7a1112039961991</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Plane class</sys_name>
         <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
         <sys_update_name>sys_dictionary_x_348652_flight_bo_flight_plane_class</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-05-21 14:01:52</sys_updated_on>
+        <sys_updated_on>2019-05-23 12:05:49</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
+        <use_dependent_field>true</use_dependent_field>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
