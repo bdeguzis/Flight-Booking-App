@@ -6,7 +6,6 @@
         <element label="Destination" max_length="40" name="destination" reference="x_348652_flight_bo_airport" type="reference"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;var departureDate = current.departure_date;&#13;&#10;&#9;var arrivalDate = current.arrival_date;&#13;&#10;&#9;var flightDuration = GlideDateTime.subtract(departureDate, arrivalDate);&#13;&#10;&#9;&#13;&#10;&#9;return flightDuration;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Duration" max_length="40" name="duration" read_only="true" type="glide_duration"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
-        <element label="One-way?" max_length="40" name="one_way" type="boolean"/>
         <element default="0" label="Passenger count" max_length="40" name="passengers" read_only="true" type="integer"/>
         <element dependent="airline" dependent_on_field="airline" label="Plane class" max_length="32" name="plane_class" reference="x_348652_flight_bo_airplane" type="reference" use_dependent_field="true"/>
         <element label="Starting airport" max_length="32" name="starting_airport" reference="x_348652_flight_bo_airport" type="reference"/>

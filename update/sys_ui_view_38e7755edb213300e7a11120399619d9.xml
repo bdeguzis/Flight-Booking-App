@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_view">
+    <sys_ui_view action="INSERT_OR_UPDATE">
+        <group/>
+        <hidden>false</hidden>
+        <name>New_Flight</name>
+        <roles/>
+        <sys_class_name>sys_ui_view</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-23 12:51:37</sys_created_on>
+        <sys_id>38e7755edb213300e7a11120399619d9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New Flight</sys_name>
+        <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
+        <sys_update_name>sys_ui_view_38e7755edb213300e7a11120399619d9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-23 12:51:37</sys_updated_on>
+        <title>New Flight</title>
+        <user/>
+    </sys_ui_view>
+</record_update>
