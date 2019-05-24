@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
     <sys_ui_action action="INSERT_OR_UPDATE">
-        <action_name>book_flight</action_name>
+        <action_name>cancel_flight</action_name>
         <active>true</active>
         <client>false</client>
         <client_script_v2/>
-        <comments>Create a new record in the Flight-User M2M table using the current user as the 'User' value</comments>
-        <condition>var ans = true;var res = new GlideRecord('x_348652_flight_bo_m2m_flights_users');res.addQuery('user','=',gs.getUserID());res.query();while(res.next()){if(res.getValue('flight')!=current.getValue('sys_id')){ans=true;}else{ans=false; break;}}ans;</condition>
+        <comments>Remove the corresponding record on the Flights-User M2M table, based on the current flight and user.</comments>
+        <condition>var ans = false;var res = new GlideRecord('x_348652_flight_bo_m2m_flights_users'); res.addQuery('user', '=', gs.getUserID()); res.query(); while (res.next()) {if (res.getValue('flight') == current.getValue('sys_id')){ans=true;break;}else{ans=false;}}ans;</condition>
         <form_action>true</form_action>
         <form_button>true</form_button>
         <form_button_v2>false</form_button_v2>
@@ -23,22 +23,23 @@
         <list_link>false</list_link>
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
-        <name>Book Flight</name>
-        <onclick>bookButton()</onclick>
+        <name>Cancel Flight</name>
+        <onclick/>
         <order>100</order>
-        <script><![CDATA[//Create a new record in the Flight-User M2M table using the current user as the 'User' value
+        <script><![CDATA[//Remove the corresponding record on the Flights-User M2M table, based on the current flight and user.
  	var gr = new GlideRecord('x_348652_flight_bo_m2m_flights_users');
- 	gr.initialize();
-	var currentUser = gs.getUser();
-   	gr.setValue('user', currentUser.getID());
-	gr.setValue('flight', current.getValue('sys_id'));
-	gr.setValue('seat_number', 'A1');
-	gr.setValue('price', 100);
- 	gr.insert();
-
-	//Increment the total passengers on this flight by 1
-	current.passengers += 1;
-	current.update();
+ 	gr.addQuery('user', '=', gs.getUserID());
+	gr.query();
+	
+	while (gr.next()) {
+		if (gr.getValue('flight') == current.getValue('sys_id')) {
+			//Decrement the total passengers on this flight by 1
+			current.passengers -= 1;
+			current.update();
+			gr.deleteRecord();
+			break;
+		}
+	}
 ]]></script>
         <show_insert>true</show_insert>
         <show_multiple_update>false</show_multiple_update>
@@ -46,21 +47,21 @@
         <show_update>true</show_update>
         <sys_class_name>sys_ui_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2019-05-21 15:58:02</sys_created_on>
+        <sys_created_on>2019-05-24 13:30:07</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>79560035db613300e7a1112039961903</sys_id>
-        <sys_mod_count>111</sys_mod_count>
-        <sys_name>Book Flight</sys_name>
+        <sys_id>614803aadb213300e7a1112039961975</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Cancel Flight</sys_name>
         <sys_overrides/>
         <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
-        <sys_update_name>sys_ui_action_79560035db613300e7a1112039961903</sys_update_name>
+        <sys_update_name>sys_ui_action_614803aadb213300e7a1112039961975</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-05-24 14:08:27</sys_updated_on>
+        <sys_updated_on>2019-05-24 13:41:17</sys_updated_on>
         <table>x_348652_flight_bo_flight</table>
         <ui11_compatible>true</ui11_compatible>
-        <ui16_compatible>true</ui16_compatible>
+        <ui16_compatible>false</ui16_compatible>
     </sys_ui_action>
 </record_update>
