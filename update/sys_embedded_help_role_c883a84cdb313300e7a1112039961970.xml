@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>10</order>
+        <role display_value="x_348652_flight_bo.flight_admin" name="x_348652_flight_bo.flight_admin">c153284cdb313300e7a11120399619f3</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-28 17:12:17</sys_created_on>
+        <sys_id>c883a84cdb313300e7a1112039961970</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>c153284cdb313300e7a11120399619f3</sys_name>
+        <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
+        <sys_update_name>sys_embedded_help_role_c883a84cdb313300e7a1112039961970</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-28 17:12:17</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>
