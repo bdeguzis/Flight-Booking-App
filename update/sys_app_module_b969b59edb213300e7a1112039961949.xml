@@ -14,7 +14,7 @@
         <mobile_title>New Flight</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
         <name>x_348652_flight_bo_flight</name>
-        <order>400</order>
+        <order>50</order>
         <override_menu_roles>false</override_menu_roles>
         <query>&amp;sysparm_view_forced = true</query>
         <report/>
@@ -25,7 +25,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b969b59edb213300e7a1112039961949</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>New Flight</sys_name>
         <sys_overrides/>
         <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
@@ -33,7 +33,7 @@
         <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
         <sys_update_name>sys_app_module_b969b59edb213300e7a1112039961949</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-05-28 16:57:49</sys_updated_on>
+        <sys_updated_on>2019-05-30 17:45:00</sys_updated_on>
         <timeline_page/>
         <title>New Flight</title>
         <uncancelable>false</uncancelable>
