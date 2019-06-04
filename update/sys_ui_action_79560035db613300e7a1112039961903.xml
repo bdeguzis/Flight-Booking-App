@@ -34,6 +34,10 @@
 	gr.setValue('flight', current.getValue('sys_id'));
 	gr.setValue('seat_number', 'A1');
 	gr.setValue('price', 100);
+	gr.setValue('u_starting_airport', current.getValue('starting_airport'));
+	gr.setValue('u_destination', current.getValue('destination'));
+	gr.setValue('departure_date', current.getValue('departure_date'));
+	gr.setValue('arrival_date', current.getValue('arrival_date'));
  	gr.insert();
 
 	//Increment the total passengers on this flight by 1
@@ -50,7 +54,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>79560035db613300e7a1112039961903</sys_id>
-        <sys_mod_count>111</sys_mod_count>
+        <sys_mod_count>115</sys_mod_count>
         <sys_name>Book Flight</sys_name>
         <sys_overrides/>
         <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
@@ -58,7 +62,7 @@
         <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
         <sys_update_name>sys_ui_action_79560035db613300e7a1112039961903</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-05-24 14:08:27</sys_updated_on>
+        <sys_updated_on>2019-06-03 12:56:42</sys_updated_on>
         <table>x_348652_flight_bo_flight</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>true</ui16_compatible>

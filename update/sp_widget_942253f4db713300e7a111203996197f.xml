@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function ($rootScope, $scope, spUtil, $location, spAriaFocusManager) {
+	var c = this;
+
+	c.getFlights = function() {
+		c.data.filter = "passengersLT_FIELDplane_class.capacity";
+		if (c.data.startDate != undefined && c.data.endDate != undefined) {
+			var date1 = {
+				day: '',
+				month: '',
+				year: '',
+				fullDate: ''
+			}
+			
+			var date2 = {
+				day: '',
+				month: '',
+				year: '',
+				fullDate: ''
+			}
+
+			date1.day = c.data.startDate.getDate();
+			date1.month = c.data.startDate.getMonth() + 1;
+			date1.year = c.data.startDate.getFullYear();
+
+			date2.day = c.data.endDate.getDate();
+			date2.month = c.data.endDate.getMonth() + 1;
+			date2.year = c.data.endDate.getFullYear();
+
+			date1.fullDate = date1.year + "-" + date1.month + "-" + date1.day;
+			date2.fullDate = date2.year + "-" + date2.month + "-" + date2.day;
+			console.log(date1.fullDate);
+			console.log(date2.fullDate);
+			
+			c.data.filter += "^departure_dateBETWEENjavascript:gs.dateGenerate('" +
+				date1.fullDate + "','00:00:00')@javascript:gs.dateGenerate('"+
+				date2.fullDate + "','23:59:59')^passengersLT_FIELDplane_class.capacity";
+
+		}
+		
+		if (c.data.startAirport != undefined) {
+			c.data.filter += "^starting_airportLIKE" + c.data.startAirport.toUpperCase();
+		}
+		
+		if (c.data.destination != undefined) {
+			c.data.filter += "^destinationLIKE" + c.data.destination.toUpperCase();
+		}
+
+		c.data.action = "getFlights";
+		c.server.update().then(function() {
+		c.data.action = "";
+		})
+	}
+	
+	c.bookFlight = function(i) {
+		c.data.flightIndex = i;
+		console.log(c.data.flights[i].flightID);
+		c.data.action = "bookFlight";
+		c.server.update().then(function() {
+		c.data.action = "";
+		})
+	}
+
+	//spUtil.recordWatch($scope, "x_348652_flight_bo_flight", "", function(name,data) {
+	//	spUtil.update($scope);
+	//})
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance_table</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>table,filter,field_list,maximum_entries,order_by,order_direction,title,color,glyph,sp_page</field_list>
+        <has_preview>false</has_preview>
+        <id>table_query_from_data_range</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Table Query from Data Range</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function(){
+	data.flights = [];
+	if (input) {
+		if (input.action == "getFlights") {
+			console.log("Filter: " + input.filter);
+			data.flights = [];
+			var gr = new GlideRecord('x_348652_flight_bo_flight');
+			gr.addEncodedQuery(input.filter);
+			gr.query();
+			while(gr.next()) {
+				var flight = {};
+				flight.flightID = gr.getDisplayValue('number');
+				flight.sysFlightID = gr.getUniqueValue();
+				flight.startAirport = gr.getDisplayValue('starting_airport');
+				flight.destination = gr.getDisplayValue('destination');
+				flight.departureDate = gr.getDisplayValue('departure_date');
+				flight.arrivalDate = gr.getDisplayValue('arrival_date');
+				flight.duration = gr.getDisplayValue('duration');
+				data.flights.push(flight);
+			}
+		}
+		
+		if (input.action == "bookFlight") {
+			var res = new GlideRecord('x_348652_flight_bo_m2m_flights_users');
+			res.initialize();
+			var currentUser = gs.getUser();
+			res.setValue('user', currentUser.getID());
+			res.setValue('flight', data.flights[input.flightIndex].sysFlightID);
+			res.setValue('seat_number', 'A1');
+			res.setValue('price', 100);
+			res.setValue('u_starting_airport', flights[input.flightIndex].startAirport);
+			res.setValue('u_destination', flights[input.flightIndex].destination);
+			res.setValue('departure_date', flights[input.flightIndex].departureDate);
+			res.setValue('arrival_date', flights[input.flightIndex].arrivalDate);
+			res.insert();
+
+			//Increment the total passengers on this flight by 1
+			flights[input.flightIndex].passengers += 1;
+			flights[input.flightIndex].update();
+		}
+	}
+
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-31 13:50:41</sys_created_on>
+        <sys_id>942253f4db713300e7a111203996197f</sys_id>
+        <sys_mod_count>202</sys_mod_count>
+        <sys_name>Table Query from Data Range</sys_name>
+        <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
+        <sys_update_name>sp_widget_942253f4db713300e7a111203996197f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-06-04 14:53:04</sys_updated_on>
+        <template><![CDATA[<div>
+  <div>
+    <h3><b>Browse Available Flights</b></h3>
+    <div class="container">
+      <div class='col-md-5'>
+        <div class="form-group">
+          
+          <b>From:</b>
+          <div>
+            <input type='text' class="form-control" placeholder="Anywhere" ng-model="c.data.startAirport"/>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-5'>
+        <div class="form-group">
+          <b>To:</b>
+          <div>
+            <input type='text' class="form-control" placeholder="Anywhere" ng-model="c.data.destination"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class='col-md-5'>
+        <div class="form-group">
+          <b>Between:</b>
+          <div>
+            <input type='date' class="form-control" ng-model="c.data.startDate"/>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-5'>
+        <div class="form-group">
+          <b>And:</b>
+          <div>
+            <input type='date' class="form-control" ng-model="c.data.endDate"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <input ng-click="c.getFlights()" class="btn btn-primary" id="dateSubmitButton" type="submit" value="View Flights">
+    </div>
+  </div>
+  <div class="panel" "panel-default">
+    <div class="panel-heading">
+      <h2><b><u>Available Flights</u></b></h2>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" ng-repeat="flight in c.data.flights ">
+        <div class="m-l-lg">
+          <b class="text-primary">Flight #: {{flight.flightID}}</b><br>
+          Starting Airport: {{flight.startAirport}} | Destination: {{flight.destination}} 
+          <br>Departure Date: {{flight.departureDate}} | Arrival Date: {{flight.arrivalDate}}
+          <input ng-click="c.bookFlight($index)" class="btn btn-primary pull-right" id="dateSubmitButton" type="submit" value="Book Flight"> 
+          <br>Duration: {{flight.duration}}
+        </div>
+      </a>
+    </div>
+    <div ng-if="data.flights.length == 0"  class="b-t wrapper text-center">No Flights</div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
