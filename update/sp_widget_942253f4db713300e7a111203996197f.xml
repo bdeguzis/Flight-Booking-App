@@ -3,7 +3,8 @@
         <category>custom</category>
         <client_script><![CDATA[function ($rootScope, $scope, spUtil, $location, spAriaFocusManager) {
 	var c = this;
-
+	c.data.globalFlights = [];
+	
 	c.getFlights = function() {
 		c.data.filter = "passengersLT_FIELDplane_class.capacity";
 		if (c.data.startDate != undefined && c.data.endDate != undefined) {
@@ -54,18 +55,19 @@
 		})
 	}
 	
-	c.bookFlight = function(i) {
-		c.data.flightIndex = i;
-		console.log(c.data.flights[i].flightID);
+	c.bookFlight = function(f) {
+		c.data.currentFlight = f;
 		c.data.action = "bookFlight";
 		c.server.update().then(function() {
 		c.data.action = "";
 		})
+		window.location.reload();
+		alert("Flight Booked!");
 	}
 
-	//spUtil.recordWatch($scope, "x_348652_flight_bo_flight", "", function(name,data) {
-	//	spUtil.update($scope);
-	//})
+	spUtil.recordWatch($scope, "x_348652_flight_bo_flight", "", function(name,data) {
+		spUtil.update($scope);
+	})
 }]]></client_script>
         <controller_as>c</controller_as>
         <css/>
@@ -83,7 +85,6 @@
         <public>false</public>
         <roles/>
         <script><![CDATA[(function(){
-	data.flights = [];
 	if (input) {
 		if (input.action == "getFlights") {
 			console.log("Filter: " + input.filter);
@@ -92,35 +93,69 @@
 			gr.addEncodedQuery(input.filter);
 			gr.query();
 			while(gr.next()) {
-				var flight = {};
-				flight.flightID = gr.getDisplayValue('number');
-				flight.sysFlightID = gr.getUniqueValue();
-				flight.startAirport = gr.getDisplayValue('starting_airport');
-				flight.destination = gr.getDisplayValue('destination');
-				flight.departureDate = gr.getDisplayValue('departure_date');
-				flight.arrivalDate = gr.getDisplayValue('arrival_date');
-				flight.duration = gr.getDisplayValue('duration');
-				data.flights.push(flight);
+				var ur = new GlideRecord('x_348652_flight_bo_m2m_flights_users');
+				ur.addQuery('user','=',gs.getUserID());
+				ur.query();
+				var proceed = true;
+				while(ur.next()){
+					if (ur.getValue('flight') == gr.getUniqueValue()) {
+						proceed = false;
+						break;
+					}
+				}
+				if (proceed) {
+					var flight = {};
+					flight.flightID = gr.getDisplayValue('number');
+					flight.sysFlightID = gr.getUniqueValue();
+					flight.startAirport = gr.getDisplayValue('starting_airport');
+					flight.sysStartAirport = gr.getValue('starting_airport');
+					flight.destination = gr.getDisplayValue('destination');
+					flight.sysDestination = gr.getValue('destination');
+					flight.departureDate = gr.getDisplayValue('departure_date');
+					flight.arrivalDate = gr.getDisplayValue('arrival_date');
+					flight.duration = gr.getDisplayValue('duration');
+					data.flights.push(flight);
+				}
 			}
 		}
 		
 		if (input.action == "bookFlight") {
-			var res = new GlideRecord('x_348652_flight_bo_m2m_flights_users');
-			res.initialize();
-			var currentUser = gs.getUser();
-			res.setValue('user', currentUser.getID());
-			res.setValue('flight', data.flights[input.flightIndex].sysFlightID);
-			res.setValue('seat_number', 'A1');
-			res.setValue('price', 100);
-			res.setValue('u_starting_airport', flights[input.flightIndex].startAirport);
-			res.setValue('u_destination', flights[input.flightIndex].destination);
-			res.setValue('departure_date', flights[input.flightIndex].departureDate);
-			res.setValue('arrival_date', flights[input.flightIndex].arrivalDate);
-			res.insert();
+			var ur2 = new GlideRecord('x_348652_flight_bo_m2m_flights_users');
+			ur2.addQuery('user','=',gs.getUserID());
+			ur2.query();
+			var proceed2 = true;
+			while(ur2.next()){
+				if (ur2.getValue('flight') == input.currentFlight.sysFlightID) {
+					proceed2 = false;
+					break;
+				}
+			}
+			if (proceed2) {
+				var res = new GlideRecord('x_348652_flight_bo_m2m_flights_users');
+				res.initialize();
+				var currentUser = gs.getUser();
+				res.setValue('user', currentUser.getID());
+				res.setValue('flight', input.currentFlight.sysFlightID);
+				res.setValue('seat_number', 'A1');
+				res.setValue('price', 100);
+				res.setValue('u_starting_airport', input.currentFlight.sysStartAirport);
+				res.setValue('u_destination', input.currentFlight.sysDestination);
+				res.setValue('departure_date', input.currentFlight.departureDate);
+				res.setValue('arrival_date', input.currentFlight.arrivalDate);
+				res.insert();
 
-			//Increment the total passengers on this flight by 1
-			flights[input.flightIndex].passengers += 1;
-			flights[input.flightIndex].update();
+				//Increment the total passengers on this flight by 1
+				var fr = new GlideRecord('x_348652_flight_bo_flight');
+				console.log(input.currentFlight.sysFlightID);
+				fr.addQuery('sys_id', input.currentFlight.sysFlightID);
+				fr.query();
+				fr.next();
+				fr.setValue('passengers', (parseInt(fr.getValue('passengers')) + 1));
+				fr.update();
+			}
+			else {
+				console.log("Flight already booked!");
+			}
 		}
 	}
 
@@ -131,14 +166,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-05-31 13:50:41</sys_created_on>
         <sys_id>942253f4db713300e7a111203996197f</sys_id>
-        <sys_mod_count>202</sys_mod_count>
+        <sys_mod_count>270</sys_mod_count>
         <sys_name>Table Query from Data Range</sys_name>
         <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
         <sys_update_name>sp_widget_942253f4db713300e7a111203996197f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-06-04 14:53:04</sys_updated_on>
+        <sys_updated_on>2019-06-04 18:43:21</sys_updated_on>
         <template><![CDATA[<div>
   <div>
     <h3><b>Browse Available Flights</b></h3>
@@ -193,7 +228,7 @@
           <b class="text-primary">Flight #: {{flight.flightID}}</b><br>
           Starting Airport: {{flight.startAirport}} | Destination: {{flight.destination}} 
           <br>Departure Date: {{flight.departureDate}} | Arrival Date: {{flight.arrivalDate}}
-          <input ng-click="c.bookFlight($index)" class="btn btn-primary pull-right" id="dateSubmitButton" type="submit" value="Book Flight"> 
+          <input ng-click="c.bookFlight(flight)" class="btn btn-primary pull-right" id="dateSubmitButton" type="submit" value="Book Flight"> 
           <br>Duration: {{flight.duration}}
         </div>
       </a>
