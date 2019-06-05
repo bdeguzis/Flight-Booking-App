@@ -166,14 +166,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-05-31 13:50:41</sys_created_on>
         <sys_id>942253f4db713300e7a111203996197f</sys_id>
-        <sys_mod_count>270</sys_mod_count>
+        <sys_mod_count>271</sys_mod_count>
         <sys_name>Table Query from Data Range</sys_name>
         <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
         <sys_update_name>sp_widget_942253f4db713300e7a111203996197f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-06-04 18:43:21</sys_updated_on>
+        <sys_updated_on>2019-06-05 13:44:00</sys_updated_on>
         <template><![CDATA[<div>
   <div>
     <h3><b>Browse Available Flights</b></h3>
@@ -226,7 +226,7 @@
       <a class="list-group-item" ng-repeat="flight in c.data.flights ">
         <div class="m-l-lg">
           <b class="text-primary">Flight #: {{flight.flightID}}</b><br>
-          Starting Airport: {{flight.startAirport}} | Destination: {{flight.destination}} 
+          Starting Airport: {{flight.startAirport}} -> Destination: {{flight.destination}} 
           <br>Departure Date: {{flight.departureDate}} | Arrival Date: {{flight.arrivalDate}}
           <input ng-click="c.bookFlight(flight)" class="btn btn-primary pull-right" id="dateSubmitButton" type="submit" value="Book Flight"> 
           <br>Duration: {{flight.duration}}

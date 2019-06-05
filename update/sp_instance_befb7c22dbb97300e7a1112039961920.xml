@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">81fb74eedb797300e7a11120399619bc</sp_column>
+        <sp_widget display_value="My Booked Flights">62cbf4eedb797300e7a111203996198f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-06-05 13:24:03</sys_created_on>
+        <sys_id>befb7c22dbb97300e7a1112039961920</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
+        <sys_update_name>sp_instance_befb7c22dbb97300e7a1112039961920</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-06-05 13:24:03</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=befb7c22dbb97300e7a1112039961920"/>
+</record_update>
