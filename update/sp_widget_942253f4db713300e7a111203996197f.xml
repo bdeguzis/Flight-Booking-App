@@ -5,6 +5,22 @@
 	var c = this;
 	c.data.globalFlights = [];
 	
+	/* Detect if this is the first time the page is loaded,
+	and if it is, set the displayInfo variable to false.
+	This is so that messages designed to show after reload 
+	do not display when the page is first loaded. */
+	var firstTime = localStorage.getItem("first_time");
+	if(!firstTime) {
+		// first time loaded!
+		localStorage.setItem("first_time","1");
+		sessionStorage.setItem('displayInfo', false);
+	}
+	
+	if (sessionStorage.getItem('displayBookInfo') == "true") {
+		spUtil.addInfoMessage("Flight: " + sessionStorage.getItem("bookedFlight") + " Booked!");
+		sessionStorage.setItem('displayBookInfo', false); 
+	}
+	
 	c.getFlights = function() {
 		c.data.filter = "passengersLT_FIELDplane_class.capacity";
 		if (c.data.startDate != undefined && c.data.endDate != undefined) {
@@ -48,10 +64,12 @@
 		if (c.data.destination != undefined) {
 			c.data.filter += "^destinationLIKE" + c.data.destination.toUpperCase();
 		}
-
+		
+		
 		c.data.action = "getFlights";
 		c.server.update().then(function() {
 		c.data.action = "";
+		c.data.clicked = true;
 		})
 	}
 	
@@ -59,10 +77,11 @@
 		c.data.currentFlight = f;
 		c.data.action = "bookFlight";
 		c.server.update().then(function() {
-		c.data.action = "";
+			c.data.action = "";
 		})
+		sessionStorage.setItem("bookedFlight", c.data.currentFlight.flightID);
+		sessionStorage.setItem('displayBookInfo',true);    
 		window.location.reload();
-		alert("Flight Booked!");
 	}
 
 	spUtil.recordWatch($scope, "x_348652_flight_bo_flight", "", function(name,data) {
@@ -166,21 +185,20 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-05-31 13:50:41</sys_created_on>
         <sys_id>942253f4db713300e7a111203996197f</sys_id>
-        <sys_mod_count>271</sys_mod_count>
+        <sys_mod_count>328</sys_mod_count>
         <sys_name>Table Query from Data Range</sys_name>
         <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
         <sys_update_name>sp_widget_942253f4db713300e7a111203996197f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-06-05 13:44:00</sys_updated_on>
+        <sys_updated_on>2019-06-05 16:02:42</sys_updated_on>
         <template><![CDATA[<div>
   <div>
     <h3><b>Browse Available Flights</b></h3>
     <div class="container">
       <div class='col-md-5'>
         <div class="form-group">
-          
           <b>From:</b>
           <div>
             <input type='text' class="form-control" placeholder="Anywhere" ng-model="c.data.startAirport"/>
@@ -220,7 +238,7 @@
   </div>
   <div class="panel" "panel-default">
     <div class="panel-heading">
-      <h2><b><u>Available Flights</u></b></h2>
+      <div ng-if="c.data.clicked == true"><h2><b><u>Available Flights</u></b></h2></div>
     </div>
     <div class="list-group">
       <a class="list-group-item" ng-repeat="flight in c.data.flights ">

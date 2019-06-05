@@ -4,14 +4,32 @@
         <client_script><![CDATA[function($scope, spUtil) {
   var c = this;
 	
+	
+	/* Detect if this is the first time the page is loaded,
+	and if it is, set the displayInfo variable to false.
+	This is so that messages designed to show after reload 
+	do not display when the page is first loaded. */
+	var firstTime = localStorage.getItem("first_time");
+	if(!firstTime) {
+		// first time loaded!
+		localStorage.setItem("first_time","1");
+		sessionStorage.setItem('displayCancelInfo', false);
+	}
+	
+	if (sessionStorage.getItem('displayCancelInfo') == "true") {
+		spUtil.addInfoMessage("Flight: " + sessionStorage.getItem("canceledFlight") + " Canceled!");
+		sessionStorage.setItem('displayCancelInfo', false); 
+	}
+	
 	c.cancelFlight = function(f) {
 		c.data.currentFlight = f;
 		c.data.action = "cancelFlight";
 		c.server.update().then(function() {
 			c.data.action = "";
 			window.location.reload();
-			alert("Flight Canceled!");
 		})
+		sessionStorage.setItem("canceledFlight", c.data.currentFlight.flightID);
+		sessionStorage.setItem('displayCancelInfo',true);
 	}
 	
 		spUtil.recordWatch($scope, "x_348652_flight_bo_m2m_flights_users", "", function(name,data) {
@@ -47,7 +65,6 @@
 				if (cr.getValue('flight') == input.currentFlight.sysFlightID) {
 					//Decrement the total passengers on this flight by 1
 					var fr = new GlideRecord('x_348652_flight_bo_flight');
-					console.log(input.currentFlight.sysFlightID);
 					fr.addQuery('sys_id', input.currentFlight.sysFlightID);
 					fr.query();
 					fr.next();
@@ -58,8 +75,6 @@
 					break;
 				}
 			}
-
-			console.log("Flight Canceled.");
 		}
 	}
 	
@@ -70,7 +85,7 @@
 		var ur = new GlideRecord('x_348652_flight_bo_m2m_flights_users');
 		ur.addQuery('user','=',gs.getUserID());
 		ur.query();
-		var proceed = true;
+		var proceed = false;
 		while(ur.next()){
 			if (ur.getValue('flight') != gr.getUniqueValue()) {
 				proceed = false;
@@ -101,14 +116,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-06-05 13:23:13</sys_created_on>
         <sys_id>62cbf4eedb797300e7a111203996198f</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>My Booked Flights</sys_name>
         <sys_package display_value="Flight Booking App" source="x_348652_flight_bo">f4efe721db213300e7a111203996190a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Flight Booking App">f4efe721db213300e7a111203996190a</sys_scope>
         <sys_update_name>sp_widget_62cbf4eedb797300e7a111203996198f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-06-05 13:56:45</sys_updated_on>
+        <sys_updated_on>2019-06-05 15:56:47</sys_updated_on>
         <template><![CDATA[<div>
   <div class="panel" "panel-default">
     <div class="panel-heading">
@@ -125,7 +140,7 @@
         </div>
       </a>
     </div>
-    <div ng-if="data.flights.length == 0"  class="b-t wrapper text-center">No Flights</div>
+    <div ng-if="data.flights.length == 0"  class="b-t wrapper text-center">You currently have no booked flights.</div>
   </div>
 </div>]]></template>
     </sp_widget>
